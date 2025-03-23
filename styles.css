@@ -1,0 +1,110 @@
+/* General Page Styling */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+/* Single Game Container */
+#gameContainer {
+    background: #87ceeb;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #4682b4; 
+    display: inline-block;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Game Board */
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+/* Cells */
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: #ffffff; 
+    border: 2px solid #4682b4; 
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.cell:hover {
+    background-color: #b0e0e6; 
+}
+
+.cell.taken {
+    cursor: not-allowed;
+}
+
+/* X and O Colors */
+.cell[data-value="X"] {
+    color: #ff00bb; 
+}
+
+.cell[data-value="O"] {
+    color: #1e90ff;
+}
+
+/* Status Message */
+#status {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+}
+
+/* Winning Message Animation */
+.win {
+    animation: flash 1s infinite alternate;
+    color: #fff700; 
+}
+
+@keyframes flash {
+    0% { transform: scale(1); color: #ff0000; }
+    100% { transform: scale(1.2); color: #ff4500; }
+}
+
+/* Restart Button */
+button {
+    background: #008000; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #006400; 
+}
+
+/* Confetti Canvas */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+}
